@@ -1,7 +1,10 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import useAuth from "./../hooks/useAuth";
 /*import styles from '../styles/Home.module.css'*/
 
 export default function Home() {
+
+  const { user, signin } = useAuth();
   return (
     <div >
       <Head>
@@ -10,7 +13,7 @@ export default function Home() {
       </Head>
 
       <main>
-
+        <button onClick={() => signin()} >entra com google</button>
       </main>
 
 
