@@ -1,22 +1,13 @@
-import Head from 'next/head';
-import useAuth from "./../hooks/useAuth";
-/*import styles from '../styles/Home.module.css'*/
+// ;
+import { Box } from '@chakra-ui/react';
+import useAuth from '../hooks/useAuth';
+/* import styles from '../styles/Home.module.css' */
 
 export default function Home() {
-
-  const { user, signin } = useAuth();
+  const { signin } = useAuth();
   return (
-    <div >
-      <Head>
-        <title>Macedo&Bezerra Advocacia</title>
-        <link rel="icon" href="/ICONE.png" />
-      </Head>
-
-      <main>
-        <button onClick={() => signin()} >entra com google</button>
-      </main>
-
-
-    </div>
-  )
+    <Box bg="gray.100" w="100%" p={4}>
+      This is the Box
+    </Box>
+  );
 }

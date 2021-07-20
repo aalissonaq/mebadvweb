@@ -1,7 +1,7 @@
-import { createContext, useState } from "react";
-import Router from "next/router";
+import { createContext, useState } from 'react';
+import Router from 'next/router';
 
-import firebase from "./../lib/firebase";
+import firebase from '../lib/firebase';
 
 const AuthContext = createContext();
 export function AuthProvider({ children }) {
@@ -36,12 +36,18 @@ export function AuthProvider({ children }) {
     }
   };
 
-  return <AuthContext.Provider value={{
-    user,
-    loading,
-    signin,
-    signout,
-  }}>{children}</AuthContext.Provider>
+  return (
+    <AuthContext.Provider
+      value={{
+        user,
+        loading,
+        signin,
+        signout,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 }
 export const AuthCosumers = AuthContext.Consumer;
 
